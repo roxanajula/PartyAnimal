@@ -25,6 +25,7 @@
                                
                                NSLog(@"%@", responseData);
                                // put them in models
+                               //ROXI was here
                                
                                //                               NSMutableArray *parsedEvents = [NSMutableArray array];
                                //                               for (NSDictionary *event in events[@"artists"]) {
