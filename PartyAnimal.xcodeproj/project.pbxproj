@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5A7998F17F1C989007061CA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7998C17F1C988007061CA /* Address.m */; };
+		B5A7999017F1C989007061CA /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7998E17F1C988007061CA /* Artist.m */; };
+		B5C7283D17F1CB0200DC9649 /* backgroundG.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283917F1CB0200DC9649 /* backgroundG.png */; };
+		B5C7283E17F1CB0200DC9649 /* backgroundG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */; };
+		B5C7283F17F1CB0200DC9649 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283B17F1CB0200DC9649 /* button.png */; };
+		B5C7284017F1CB0200DC9649 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283C17F1CB0200DC9649 /* button@2x.png */; };
 		C85F4B7F17F06DAE0064F557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B7E17F06DAE0064F557 /* Foundation.framework */; };
 		C85F4B8117F06DAE0064F557 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B8017F06DAE0064F557 /* CoreGraphics.framework */; };
 		C85F4B8317F06DAE0064F557 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B8217F06DAE0064F557 /* UIKit.framework */; };
@@ -40,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5A7998B17F1C988007061CA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		B5A7998C17F1C988007061CA /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		B5A7998D17F1C988007061CA /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		B5A7998E17F1C988007061CA /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		B5C7283917F1CB0200DC9649 /* backgroundG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundG.png; sourceTree = "<group>"; };
+		B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundG@2x.png"; sourceTree = "<group>"; };
+		B5C7283B17F1CB0200DC9649 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		B5C7283C17F1CB0200DC9649 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		C85F4B7B17F06DAE0064F557 /* PartyAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85F4B7E17F06DAE0064F557 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C85F4B8017F06DAE0064F557 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +158,10 @@
 		C85F4B8517F06DAE0064F557 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5C7283917F1CB0200DC9649 /* backgroundG.png */,
+				B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */,
+				B5C7283B17F1CB0200DC9649 /* button.png */,
+				B5C7283C17F1CB0200DC9649 /* button@2x.png */,
 				C85F4B8617F06DAE0064F557 /* PartyAnimal-Info.plist */,
 				C85F4B8717F06DAE0064F557 /* InfoPlist.strings */,
 				C85F4B8A17F06DAE0064F557 /* main.m */,
@@ -179,6 +197,10 @@
 				C85F4BBC17F08CAC0064F557 /* Fees.m */,
 				C85F4BBE17F08CB90064F557 /* Venue.h */,
 				C85F4BBF17F08CB90064F557 /* Venue.m */,
+				B5A7998B17F1C988007061CA /* Address.h */,
+				B5A7998C17F1C988007061CA /* Address.m */,
+				B5A7998D17F1C988007061CA /* Artist.h */,
+				B5A7998E17F1C988007061CA /* Artist.m */,
 				C85F4BC117F08D010064F557 /* Genre.h */,
 				C85F4BC217F08D010064F557 /* Genre.m */,
 				C85F4BC417F08D800064F557 /* DataRetriever.h */,
@@ -272,9 +294,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C7283F17F1CB0200DC9649 /* button.png in Resources */,
 				C85F4B9517F06DAE0064F557 /* Main_iPad.storyboard in Resources */,
+				B5C7283D17F1CB0200DC9649 /* backgroundG.png in Resources */,
+				B5C7283E17F1CB0200DC9649 /* backgroundG@2x.png in Resources */,
 				C85F4B9A17F06DAE0064F557 /* Images.xcassets in Resources */,
 				C85F4B9217F06DAE0064F557 /* Main_iPhone.storyboard in Resources */,
+				B5C7284017F1CB0200DC9649 /* button@2x.png in Resources */,
 				C85F4B8917F06DAE0064F557 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,9 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A7998F17F1C989007061CA /* Address.m in Sources */,
 				C85F4BBD17F08CAC0064F557 /* Fees.m in Sources */,
 				C85F4BC317F08D010064F557 /* Genre.m in Sources */,
 				C85F4BBA17F08B310064F557 /* Event.m in Sources */,
+				B5A7999017F1C989007061CA /* Artist.m in Sources */,
 				C85F4B9817F06DAE0064F557 /* ViewController.m in Sources */,
 				C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */,
 				C85F4BC017F08CB90064F557 /* Venue.m in Sources */,
@@ -520,6 +548,7 @@
 				C85F4BB217F06DAE0064F557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C85F4BB317F06DAE0064F557 /* Build configuration list for PBXNativeTarget "PartyAnimalTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +557,7 @@
 				C85F4BB517F06DAE0064F557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
