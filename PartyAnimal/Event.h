@@ -1,0 +1,25 @@
+//
+//  Event.h
+//  PartyAnimal
+//
+//  Created by Gina Lupu on 9/23/13.
+//  Copyright (c) 2013 RubyTribe. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Fees.h"
+#import "Venue.h"
+
+@interface Event : NSObject
+
+@property (strong,nonatomic) NSMutableArray *artists;
+@property (strong,nonatomic) Fees * fees;
+@property (strong, nonatomic) NSMutableArray * flyers;
+@property (strong, nonatomic) NSMutableArray * musicGenres;
+@property (strong, nonatomic) NSString * name;
+@property (strong, nonatomic) NSString * startsAt;
+@property (strong, nonatomic) Venue * venue;
+
+
+
+@end

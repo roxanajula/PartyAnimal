@@ -22,6 +22,11 @@
 		C85F4BA317F06DAE0064F557 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B8217F06DAE0064F557 /* UIKit.framework */; };
 		C85F4BAB17F06DAE0064F557 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C85F4BA917F06DAE0064F557 /* InfoPlist.strings */; };
 		C85F4BAD17F06DAE0064F557 /* PartyAnimalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BAC17F06DAE0064F557 /* PartyAnimalTests.m */; };
+		C85F4BBA17F08B310064F557 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BB917F08B310064F557 /* Event.m */; };
+		C85F4BBD17F08CAC0064F557 /* Fees.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BBC17F08CAC0064F557 /* Fees.m */; };
+		C85F4BC017F08CB90064F557 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BBF17F08CB90064F557 /* Venue.m */; };
+		C85F4BC317F08D010064F557 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BC217F08D010064F557 /* Genre.m */; };
+		C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BC517F08D800064F557 /* DataRetriever.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,16 @@
 		C85F4BA817F06DAE0064F557 /* PartyAnimalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PartyAnimalTests-Info.plist"; sourceTree = "<group>"; };
 		C85F4BAA17F06DAE0064F557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C85F4BAC17F06DAE0064F557 /* PartyAnimalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartyAnimalTests.m; sourceTree = "<group>"; };
+		C85F4BB817F08B310064F557 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		C85F4BB917F08B310064F557 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		C85F4BBB17F08CAC0064F557 /* Fees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fees.h; sourceTree = "<group>"; };
+		C85F4BBC17F08CAC0064F557 /* Fees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fees.m; sourceTree = "<group>"; };
+		C85F4BBE17F08CB90064F557 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		C85F4BBF17F08CB90064F557 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		C85F4BC117F08D010064F557 /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		C85F4BC217F08D010064F557 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
+		C85F4BC417F08D800064F557 /* DataRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRetriever.h; sourceTree = "<group>"; };
+		C85F4BC517F08D800064F557 /* DataRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRetriever.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +129,12 @@
 		C85F4B8417F06DAE0064F557 /* PartyAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				C85F4BB717F08B020064F557 /* ViewControllers */,
+				C85F4BB617F08AF80064F557 /* Models */,
 				C85F4B8D17F06DAE0064F557 /* AppDelegate.h */,
 				C85F4B8E17F06DAE0064F557 /* AppDelegate.m */,
 				C85F4B9017F06DAE0064F557 /* Main_iPhone.storyboard */,
 				C85F4B9317F06DAE0064F557 /* Main_iPad.storyboard */,
-				C85F4B9617F06DAE0064F557 /* ViewController.h */,
-				C85F4B9717F06DAE0064F557 /* ViewController.m */,
 				C85F4B9917F06DAE0064F557 /* Images.xcassets */,
 				C85F4B8517F06DAE0064F557 /* Supporting Files */,
 			);
@@ -153,6 +168,32 @@
 				C85F4BA917F06DAE0064F557 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C85F4BB617F08AF80064F557 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C85F4BB817F08B310064F557 /* Event.h */,
+				C85F4BB917F08B310064F557 /* Event.m */,
+				C85F4BBB17F08CAC0064F557 /* Fees.h */,
+				C85F4BBC17F08CAC0064F557 /* Fees.m */,
+				C85F4BBE17F08CB90064F557 /* Venue.h */,
+				C85F4BBF17F08CB90064F557 /* Venue.m */,
+				C85F4BC117F08D010064F557 /* Genre.h */,
+				C85F4BC217F08D010064F557 /* Genre.m */,
+				C85F4BC417F08D800064F557 /* DataRetriever.h */,
+				C85F4BC517F08D800064F557 /* DataRetriever.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C85F4BB717F08B020064F557 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C85F4B9617F06DAE0064F557 /* ViewController.h */,
+				C85F4B9717F06DAE0064F557 /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85F4BBD17F08CAC0064F557 /* Fees.m in Sources */,
+				C85F4BC317F08D010064F557 /* Genre.m in Sources */,
+				C85F4BBA17F08B310064F557 /* Event.m in Sources */,
 				C85F4B9817F06DAE0064F557 /* ViewController.m in Sources */,
+				C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */,
+				C85F4BC017F08CB90064F557 /* Venue.m in Sources */,
 				C85F4B8F17F06DAE0064F557 /* AppDelegate.m in Sources */,
 				C85F4B8B17F06DAE0064F557 /* main.m in Sources */,
 			);
