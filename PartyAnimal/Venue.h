@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Venue : NSObject
+@property (strong, nonatomic) NSString * address;
+@property (strong, nonatomic) NSString * name;
+@property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString * phoneNo;
+@property (strong, nonatomic) NSString * website;
 
 @end

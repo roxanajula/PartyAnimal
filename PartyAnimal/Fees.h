@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Fees : NSObject
-
+@property (strong, nonatomic) NSString * kind;
+@property (strong, nonatomic) NSString * text;
 @end
