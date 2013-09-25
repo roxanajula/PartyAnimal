@@ -33,6 +33,7 @@
 		C85F4BC017F08CB90064F557 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BBF17F08CB90064F557 /* Venue.m */; };
 		C85F4BC317F08D010064F557 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BC217F08D010064F557 /* Genre.m */; };
 		C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = C85F4BC517F08D800064F557 /* DataRetriever.m */; };
+		C8D18DBD17F1E076002FF648 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D18DBC17F1E076002FF648 /* Factory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		C85F4BC217F08D010064F557 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 		C85F4BC417F08D800064F557 /* DataRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRetriever.h; sourceTree = "<group>"; };
 		C85F4BC517F08D800064F557 /* DataRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRetriever.m; sourceTree = "<group>"; };
+		C8D18DBB17F1E076002FF648 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		C8D18DBC17F1E076002FF648 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				C85F4BC217F08D010064F557 /* Genre.m */,
 				C85F4BC417F08D800064F557 /* DataRetriever.h */,
 				C85F4BC517F08D800064F557 /* DataRetriever.m */,
+				C8D18DBB17F1E076002FF648 /* Factory.h */,
+				C8D18DBC17F1E076002FF648 /* Factory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				C85F4B9817F06DAE0064F557 /* ViewController.m in Sources */,
 				C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */,
 				C85F4BC017F08CB90064F557 /* Venue.m in Sources */,
+				C8D18DBD17F1E076002FF648 /* Factory.m in Sources */,
 				C85F4B8F17F06DAE0064F557 /* AppDelegate.m in Sources */,
 				C85F4B8B17F06DAE0064F557 /* main.m in Sources */,
 			);
