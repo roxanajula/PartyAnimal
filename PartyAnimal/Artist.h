@@ -12,4 +12,6 @@
 @property (strong,nonatomic) NSString * name;
 @property (strong,nonatomic) NSString * identifier;
 
++(NSString *) artistNamebyId: (NSString *) identif fromData:(NSDictionary *) responseData;
+
 @end

@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 RubyTribe. All rights reserved.
 //
 
+#import "Event.h"
+#import "Artist.h"
 #import "DataRetriever.h"
+#import "Factory.h"
 
 @implementation DataRetriever
 
@@ -23,19 +26,25 @@
                                                                                             options:NSJSONReadingMutableContainers
                                                                                               error:nil];
                                
-                               NSLog(@"%@", responseData);
+                               // NSLog(@"%@", responseData);
                                // put them in models
+                               // Artists
                                
-                               //                               NSMutableArray *parsedEvents = [NSMutableArray array];
-                               //                               for (NSDictionary *event in events[@"artists"]) {
-                               //                                   Event *e = [[Event alloc] init];
-                               //                                   e.name = event[@"name"];
-                               //                                   e.location = event[@"location"];
-                               //
-                               //                                   [parsedEvents addObject:e];
-                               //                               }
+                               NSMutableArray *parsedArtists = [Factory createArtistCollection:responseData];
+                               NSLog(@"%@", parsedArtists );
+                               //Events
                                
-                               //GINA WAS HERE
+                               NSMutableArray *parsedEvents = [NSMutableArray array];
+                                 for (NSDictionary *event in responseData[@"events"]) {
+                                        Event *e = [[Event alloc] init];
+                                        e.name = event[@"name"];
+                                        e.startsAt=event[@"starts_at"];
+                                        e.artists=event[@"artists"];
+                                        NSLog(@"%@", e.artists );
+                                        [parsedEvents addObject:e];
+                                                        }
+                               
+                             
                                
                            }];
 }
