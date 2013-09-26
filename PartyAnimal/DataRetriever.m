@@ -8,6 +8,8 @@
 
 #import "Event.h"
 #import "Artist.h"
+#import "Genre.h"
+#import "Venue.h"
 #import "DataRetriever.h"
 #import "Factory.h"
 
@@ -27,22 +29,71 @@
                                                                                               error:nil];
                                
                                // NSLog(@"%@", responseData);
-                               // put them in models
-                               // Artists
+                              
                                
-                               NSMutableArray *parsedArtists = [Factory createArtistCollection:responseData];
-                               NSLog(@"%@", parsedArtists );
-                               //Events
+            // Artists
                                
+            NSMutableArray *parsedArtists = [Factory createArtistCollection:responseData];
+            //NSLog(@"%@", parsedArtists );
+                               
+            //Music genres
+                 
+            NSMutableArray *parsedGenres = [Factory createGenreCollection:responseData];
+            //NSLog(@"%@", parsedGenres );
+                            
+            //Venues
+            NSMutableArray *parsedVenues = [Factory createVenueCollection:responseData];
+            NSLog(@"%@", parsedVenues);
+            
+            //Events
                                NSMutableArray *parsedEvents = [NSMutableArray array];
-                                 for (NSDictionary *event in responseData[@"events"]) {
-                                        Event *e = [[Event alloc] init];
-                                        e.name = event[@"name"];
-                                        e.startsAt=event[@"starts_at"];
-                                        e.artists=event[@"artists"];
-                                        NSLog(@"%@", e.artists );
-                                        [parsedEvents addObject:e];
-                                                        }
+                               for (NSDictionary *event in responseData[@"events"]) {
+                                   Event *e = [[Event alloc] init];
+                                   NSLog(@"***************************");
+                                   e.name = event[@"name"];
+                                   NSLog(@"Event name: %@", e.name);
+                                   e.startsAt = event[@"starts_at"];
+                                   NSLog(@"Starts at: %@", e.startsAt);
+                                   
+                                   NSDictionary *feesDict = [event objectForKey:@"fees"];
+                                   NSString *textString = [feesDict valueForKey:@"text"];
+                                   NSString *kindString = [feesDict valueForKey:@"kind"];
+                                   e.fees = [[Fees alloc]init];
+                                   e.fees.text=textString;
+                                   e.fees.kind=kindString;
+                                   NSLog(@"Price: %@ Kind: %@", e.fees.text, e.fees.kind);
+                                   
+                                   
+                                   NSMutableArray *artistsID = event[@"artists"];
+                                   e.artists = [Artist artistArrayFromArtistIDArray:artistsID withArtistCollection:parsedArtists];
+                                   for (int i=0; i<[e.artists count]; i++) {
+                                       Artist *ar=e.artists[i];
+                                       NSLog(@"Artist name: %@", ar.name);
+                                   }
+                                   
+                                   
+                                   NSMutableArray *genresID = event[@"music_genres"];
+                                   e.genres = [Genre genreArrayFromGenreIDArray:genresID withGenreCollection:parsedGenres];
+                                   for (int i=0; i<[e.genres count]; i++) {
+                                       Genre *ge=e.genres[i];
+                                       NSLog(@"Genre name: %@", ge.name);
+                                   }
+                                   
+                                   NSString *venueID = event[@"venue"];
+                                   e.venue = [Venue venueFromVenueID:venueID withVenueCollection:parsedVenues];
+                                   NSLog(@"Venue name: %@", e.venue.name);
+                                   NSLog(@"Address: %@, %@, %@, %@", e.venue.address.city, e.venue.address.country, e.venue.address.street, e.venue.address.zipCode);
+                                   
+                                 
+                                   NSDictionary *flyersDictionary = [event valueForKey:@"flyers"];
+                                   NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"];
+                                   NSMutableArray *hrefArray = [versionsDictionary valueForKey:@"href"];
+                                   e.flyers=hrefArray;
+                                   NSLog(@"Flyers: %@", e.flyers);
+                                   
+                                  
+                                   [parsedEvents addObject:e];
+                               }
                                
                              
                                

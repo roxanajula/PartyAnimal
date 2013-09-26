@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "DataRetriever.h"
 #import "Event.h"
 
 @interface MasterViewController(){
@@ -25,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[DataRetriever retrieveData];
 }
 
 -(void) viewWillAppear: (BOOL) animated { [self.tableView reloadData];}

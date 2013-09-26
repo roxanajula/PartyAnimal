@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Address.h"
 
 @interface Venue : NSObject
-@property (strong, nonatomic) NSString * address;
+@property (strong, nonatomic) Address * address;
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * identifier;
 @property (strong, nonatomic) NSString * phoneNo;
 @property (strong, nonatomic) NSString * website;
+
++(Venue*) venueFromVenueID:(NSString *) venueID withVenueCollection: (NSMutableArray *) venueCollection;
 
 @end

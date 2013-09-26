@@ -15,7 +15,7 @@
 @property (strong,nonatomic) NSMutableArray *artists;
 @property (strong,nonatomic) Fees * fees;
 @property (strong, nonatomic) NSMutableArray * flyers;
-@property (strong, nonatomic) NSMutableArray * musicGenres;
+@property (strong, nonatomic) NSMutableArray * genres;
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * startsAt;
 @property (strong, nonatomic) Venue * venue;
