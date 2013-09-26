@@ -7,13 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "Event.h"
+#import "MasterViewController.h"
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+    Event *event1 = [[Event alloc] init];
+    event1.name=@"Hip Hop Party";
+    event1.startsAt=@"20:00 - 30.10.2013";
+    Event *event2 = [[Event alloc] init];
+    event2.name=@"Trap Party";
+    event2.startsAt=@"22:00 - 05.10.2013";
+    Event *event3 = [[Event alloc] init];
+    event3.name=@"Halloween Party";
+    event3.startsAt=@"21:00 - 27.09.2013";
+    NSMutableArray *dummyEvents = [NSMutableArray arrayWithObjects:event1,event2,event3 ,nil];
+    UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
+    MasterViewController * masterController = [navController.viewControllers objectAtIndex:0];
+    masterController.dummyEvents= dummyEvents;
+        return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

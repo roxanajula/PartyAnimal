@@ -10,19 +10,19 @@
 #import "Factory.h"
 #import "DataRetriever.h"
 
+
 @implementation Artist
 
-+(NSString *) artistNamebyId: (NSString *) identif fromData:(NSDictionary *) responseData {
-    NSMutableArray *artistCollection = [Factory createArtistCollection:responseData];
-    
++(NSMutableArray*) artistArrayFromArtistIDArray:(NSMutableArray *) idArray withArtistCollection: (NSMutableArray *) artistCollection {
+    NSMutableArray *artistArray=[NSMutableArray array];
     for (Artist *a in artistCollection) {
-        if ([a.identifier isEqualToString:identif]){
-            return a.name;
+        for (int i=0; i<[idArray count]; i++) {
+            if ([a.identifier isEqual:idArray[i]]) {
+                [artistArray addObject:a];
+            }
         }
-        
-    
     }
-    return nil;
+    return artistArray;
 }
 
 

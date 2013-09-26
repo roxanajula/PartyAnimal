@@ -11,5 +11,6 @@
 @interface Factory : NSObject
 
 +(NSMutableArray *) createArtistCollection:(NSDictionary *) responseData;
-
++(NSMutableArray *) createGenreCollection:(NSDictionary *) responseData;
++(NSMutableArray *) createVenueCollection:(NSDictionary *) responseData;
 @end

@@ -12,6 +12,5 @@
 @property (strong,nonatomic) NSString * name;
 @property (strong,nonatomic) NSString * identifier;
 
-+(NSString *) artistNamebyId: (NSString *) identif fromData:(NSDictionary *) responseData;
-
++(NSMutableArray*) artistArrayFromArtistIDArray:(NSMutableArray *) idArray withArtistCollection: (NSMutableArray *) artistCollection;
 @end

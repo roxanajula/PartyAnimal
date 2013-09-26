@@ -10,4 +10,16 @@
 
 @implementation Genre
 
++(NSMutableArray*) genreArrayFromGenreIDArray:(NSMutableArray *) idArray withGenreCollection: (NSMutableArray *) genreCollection {
+    NSMutableArray *genreArray=[NSMutableArray array];
+    for (Genre *g in genreCollection) {
+        for (int i=0; i<[idArray count]; i++) {
+            if ([g.identifier isEqual:idArray[i]]) {
+                [genreArray addObject:g];
+            }
+        }
+    }
+    return genreArray;
+}
+
 @end
