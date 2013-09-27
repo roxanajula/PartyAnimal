@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSMutableArray * flyers;
 @property (strong, nonatomic) NSMutableArray * genres;
 @property (strong, nonatomic) NSString * name;
-@property (strong, nonatomic) NSString * startsAt;
+@property (strong, nonatomic) NSDate * startsAt;
 @property (strong, nonatomic) Venue * venue;
 
 
