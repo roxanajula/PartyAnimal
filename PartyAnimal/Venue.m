@@ -10,4 +10,13 @@
 
 @implementation Venue
 
++(Venue*) venueFromVenueID:(NSString *) venueID withVenueCollection: (NSMutableArray *) venueCollection {
+    for (Venue *v in venueCollection) {
+            if ([v.identifier isEqual:venueID]) {
+                return v;
+            }
+    }
+    return nil;
+}
+
 @end

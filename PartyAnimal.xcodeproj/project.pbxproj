@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B503DFE117F3144800CF5942 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B503DFE017F3144800CF5942 /* MasterViewController.m */; };
+		B503DFE417F3145A00CF5942 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B503DFE317F3145A00CF5942 /* DetailViewController.m */; };
 		B5A7998F17F1C989007061CA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7998C17F1C988007061CA /* Address.m */; };
 		B5A7999017F1C989007061CA /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7998E17F1C988007061CA /* Artist.m */; };
 		B5C7283D17F1CB0200DC9649 /* backgroundG.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283917F1CB0200DC9649 /* backgroundG.png */; };
@@ -47,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B503DFDF17F3144800CF5942 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B503DFE017F3144800CF5942 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B503DFE217F3145A00CF5942 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B503DFE317F3145A00CF5942 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B5A7998B17F1C988007061CA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		B5A7998C17F1C988007061CA /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		B5A7998D17F1C988007061CA /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
@@ -113,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B545002C17F590550063F758 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C85F4BC417F08D800064F557 /* DataRetriever.h */,
+				C85F4BC517F08D800064F557 /* DataRetriever.m */,
+				C8D18DBB17F1E076002FF648 /* Factory.h */,
+				C8D18DBC17F1E076002FF648 /* Factory.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		C85F4B7217F06DAE0064F557 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +163,7 @@
 		C85F4B8417F06DAE0064F557 /* PartyAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				B545002C17F590550063F758 /* Lib */,
 				C85F4BB717F08B020064F557 /* ViewControllers */,
 				C85F4BB617F08AF80064F557 /* Models */,
 				C85F4B8D17F06DAE0064F557 /* AppDelegate.h */,
@@ -206,10 +224,6 @@
 				B5A7998E17F1C988007061CA /* Artist.m */,
 				C85F4BC117F08D010064F557 /* Genre.h */,
 				C85F4BC217F08D010064F557 /* Genre.m */,
-				C85F4BC417F08D800064F557 /* DataRetriever.h */,
-				C85F4BC517F08D800064F557 /* DataRetriever.m */,
-				C8D18DBB17F1E076002FF648 /* Factory.h */,
-				C8D18DBC17F1E076002FF648 /* Factory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,6 +231,10 @@
 		C85F4BB717F08B020064F557 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B503DFDF17F3144800CF5942 /* MasterViewController.h */,
+				B503DFE017F3144800CF5942 /* MasterViewController.m */,
+				B503DFE217F3145A00CF5942 /* DetailViewController.h */,
+				B503DFE317F3145A00CF5942 /* DetailViewController.m */,
 				C85F4B9617F06DAE0064F557 /* ViewController.h */,
 				C85F4B9717F06DAE0064F557 /* ViewController.m */,
 			);
@@ -329,10 +347,12 @@
 				C85F4BBD17F08CAC0064F557 /* Fees.m in Sources */,
 				C85F4BC317F08D010064F557 /* Genre.m in Sources */,
 				C85F4BBA17F08B310064F557 /* Event.m in Sources */,
+				B503DFE117F3144800CF5942 /* MasterViewController.m in Sources */,
 				B5A7999017F1C989007061CA /* Artist.m in Sources */,
 				C85F4B9817F06DAE0064F557 /* ViewController.m in Sources */,
 				C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */,
 				C85F4BC017F08CB90064F557 /* Venue.m in Sources */,
+				B503DFE417F3145A00CF5942 /* DetailViewController.m in Sources */,
 				C8D18DBD17F1E076002FF648 /* Factory.m in Sources */,
 				C85F4B8F17F06DAE0064F557 /* AppDelegate.m in Sources */,
 				C85F4B8B17F06DAE0064F557 /* main.m in Sources */,
