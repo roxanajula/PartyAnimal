@@ -56,7 +56,6 @@
     UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
     Event *event =[self.dummyEvents objectAtIndex:indexPath.row];
     cell.textLabel.text = event.name;
-    cell.detailTextLabel.text=event.startsAt;
     return cell;
 }
 
