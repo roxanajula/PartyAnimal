@@ -119,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B545002C17F590550063F758 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C85F4BC417F08D800064F557 /* DataRetriever.h */,
+				C85F4BC517F08D800064F557 /* DataRetriever.m */,
+				C8D18DBB17F1E076002FF648 /* Factory.h */,
+				C8D18DBC17F1E076002FF648 /* Factory.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		C85F4B7217F06DAE0064F557 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +163,7 @@
 		C85F4B8417F06DAE0064F557 /* PartyAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				B545002C17F590550063F758 /* Lib */,
 				C85F4BB717F08B020064F557 /* ViewControllers */,
 				C85F4BB617F08AF80064F557 /* Models */,
 				C85F4B8D17F06DAE0064F557 /* AppDelegate.h */,
@@ -212,10 +224,6 @@
 				B5A7998E17F1C988007061CA /* Artist.m */,
 				C85F4BC117F08D010064F557 /* Genre.h */,
 				C85F4BC217F08D010064F557 /* Genre.m */,
-				C85F4BC417F08D800064F557 /* DataRetriever.h */,
-				C85F4BC517F08D800064F557 /* DataRetriever.m */,
-				C8D18DBB17F1E076002FF648 /* Factory.h */,
-				C8D18DBC17F1E076002FF648 /* Factory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";

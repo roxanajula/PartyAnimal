@@ -16,7 +16,7 @@
 @implementation DataRetriever
 
 + (void) retrieveData {
-    NSURL *url = [NSURL URLWithString:@"http://api.clubjudge.com/events/upcoming?location[lat]=46&location[lon]=23page=0&named_scopes[]=featured"];
+    NSURL *url = [NSURL URLWithString:@"http://api.clubjudge.com/events/upcoming?location[lat]=52&location[lon]=4page=0&named_scopes[]=featured"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setHTTPMethod:@"GET"];
@@ -52,7 +52,12 @@
                                    NSLog(@"***************************");
                                    e.name = event[@"name"];
                                    NSLog(@"Event name: %@", e.name);
-                                   e.startsAt = event[@"starts_at"];
+                                   
+                                   NSString *startsAtString = event[@"starts_at"];
+                                   NSLog(@"StartsAt String: %@", startsAtString);
+                                   NSDateFormatter *df = [[NSDateFormatter alloc] init];
+                                   [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
+                                   e.startsAt= [df dateFromString: startsAtString];
                                    NSLog(@"Starts at: %@", e.startsAt);
                                    
                                    NSDictionary *feesDict = [event objectForKey:@"fees"];
