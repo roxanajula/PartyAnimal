@@ -28,7 +28,7 @@
                                                                                             options:NSJSONReadingMutableContainers
                                                                                               error:nil];
                                
-                               // NSLog(@"%@", responseData);
+                                NSLog(@"%@", responseData);
                               
                                
             // Artists
@@ -61,12 +61,11 @@
                                    NSLog(@"Starts at: %@", e.startsAt);
                                    
                                    NSDictionary *feesDict = [event objectForKey:@"fees"];
-                                   NSString *textString = [feesDict valueForKey:@"text"];
-                                   NSString *kindString = [feesDict valueForKey:@"kind"];
                                    e.fees = [[Fees alloc]init];
-                                   e.fees.text=textString;
-                                   e.fees.kind=kindString;
-                                   NSLog(@"Price: %@ Kind: %@", e.fees.text, e.fees.kind);
+                                   e.fees.kind = [feesDict valueForKey:@"kind"][0];
+                                   e.fees.currency =  [feesDict valueForKey:@"currency"][0];
+                                   e.fees.price = [[feesDict valueForKey:@"cents"][0] floatValue]/100;
+                                   NSLog(@"Cents: %f Kind: %@ Currency: %@", e.fees.price, e.fees.kind, e.fees.currency);
                                    
                                    
                                    NSMutableArray *artistsID = event[@"artists"];
@@ -91,7 +90,7 @@
                                    
                                  
                                    NSDictionary *flyersDictionary = [event valueForKey:@"flyers"];
-                                   NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"];
+                                   NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"][0];
                                    NSMutableArray *hrefArray = [versionsDictionary valueForKey:@"href"];
                                    e.flyers=hrefArray;
                                    NSLog(@"Flyers: %@", e.flyers);
