@@ -25,5 +25,4 @@
     return artistArray;
 }
 
-
 @end

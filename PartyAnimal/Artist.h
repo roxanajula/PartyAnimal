@@ -13,4 +13,5 @@
 @property (strong,nonatomic) NSString * identifier;
 
 +(NSMutableArray*) artistArrayFromArtistIDArray:(NSMutableArray *) idArray withArtistCollection: (NSMutableArray *) artistCollection;
+
 @end
