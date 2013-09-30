@@ -22,13 +22,11 @@
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               //  NSError *error;
                             NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data
                                                                                             options:NSJSONReadingMutableContainers
                                                                                               error:nil];
                                block([Factory createEventCollection:responseData]);
                            }];
-    
 }
 
 @end

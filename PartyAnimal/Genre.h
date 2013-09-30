@@ -14,4 +14,5 @@
 @property (strong,nonatomic) NSString *identifier;
 
 +(NSMutableArray*) genreArrayFromGenreIDArray:(NSMutableArray *) idArray withGenreCollection: (NSMutableArray *) genreCollection;
+
 @end

@@ -10,12 +10,12 @@
 #import "Artist.h"
 #import "Genre.h"
 #import "Venue.h"
+#import "Fees.h"
 #import "Event.h"
 #import "DataRetriever.h"
 
 
 @implementation Factory
-
 
 
 +(NSMutableArray *) createArtistCollection:(NSDictionary *) responseData {
@@ -49,92 +49,74 @@
         v.phoneNo = venue[@"phone_number"];
         v.website = venue[@"website_url"];
         NSDictionary *addressDict = [venue objectForKey:@"address"];
-        NSString *cityString = [addressDict valueForKey:@"city"];
-        NSString *countryString = [addressDict valueForKey:@"country"];
-        NSString *streetString = [addressDict valueForKey:@"street"];
-        NSString *zipString = [addressDict valueForKey:@"zip_code"];
         v.address = [[Address alloc]init];
-        v.address.city=cityString;
-        v.address.country=countryString;
-        v.address.street=streetString;
-        v.address.zipCode=zipString;
+        v.address.city =[addressDict valueForKey:@"city"];
+        v.address.country = [addressDict valueForKey:@"country"];
+        v.address.street = [addressDict valueForKey:@"street"];
+        v.address.zipCode = [addressDict valueForKey:@"zip_code"];
         [parsedVenues addObject:v];
-        //NSLog(@"Venue information: Name %@ ID %@ Phone %@ Website %@", v.name, v.identifier, v.phoneNo, v.website);
-        //NSLog(@"Venue address: City %@ Country %@ Street %@ Zip %@", v.address.city, v.address.country, v.address.street, v.address.zipCode);
     }
     return parsedVenues;
 }
 
 +(NSMutableArray *) createEventCollection:(NSDictionary *) responseData {
     
-    // Artists
-    
     NSMutableArray *parsedArtists = [Factory createArtistCollection:responseData];
-    
-    //Music genres
-    
     NSMutableArray *parsedGenres = [Factory createGenreCollection:responseData];
-    
-    //Venues
     NSMutableArray *parsedVenues = [Factory createVenueCollection:responseData];
     
-    //Events
     NSMutableArray *parsedEvents = [NSMutableArray array];
     for (NSDictionary *event in responseData[@"events"]) {
         Event *e = [[Event alloc] init];
-        //NSLog(@"***************************");
-        e.name = event[@"name"];
-        //NSLog(@"Event name: %@", e.name);
-        
-        NSString *startsAtString = event[@"starts_at"];
-        //NSLog(@"StartsAt String: %@", startsAtString);
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
-        e.startsAt= [df dateFromString: startsAtString];
-        //NSLog(@"Starts at: %@", e.startsAt);
-        
-        NSDictionary *feesDict = [event objectForKey:@"fees"];
-        e.fees = [[Fees alloc]init];
-        e.fees.kind = [feesDict valueForKey:@"kind"][0];
-        e.fees.currency =  [feesDict valueForKey:@"currency"][0];
-        if ([[feesDict valueForKey:@"cents"][0] isKindOfClass:[NSNumber class]])
-            e.fees.price = [[feesDict valueForKey:@"cents"][0] floatValue]/100;
-        //NSLog(@"Cents: %f Kind: %@ Currency: %@", e.fees.price, e.fees.kind, e.fees.currency);
-        
-        
-        NSMutableArray *artistsID = event[@"artists"];
-        e.artists = [Artist artistArrayFromArtistIDArray:artistsID withArtistCollection:parsedArtists];
-        for (int i=0; i<[e.artists count]; i++) {
-            Artist *ar=e.artists[i];
-            //NSLog(@"Artist name: %@", ar.name);
-        }
-        
-        
-        NSMutableArray *genresID = event[@"music_genres"];
-        e.genres = [Genre genreArrayFromGenreIDArray:genresID withGenreCollection:parsedGenres];
-        for (int i=0; i<[e.genres count]; i++) {
-            Genre *ge=e.genres[i];
-            //NSLog(@"Genre name: %@", ge.name);
-        }
-        
-        NSString *venueID = event[@"venue"];
-        e.venue = [Venue venueFromVenueID:venueID withVenueCollection:parsedVenues];
-        //NSLog(@"Venue name: %@", e.venue.name);
-        //NSLog(@"Address: %@, %@, %@, %@", e.venue.address.city, e.venue.address.country, e.venue.address.street, e.venue.address.zipCode);
-        
-        
-        NSDictionary *flyersDictionary = [event valueForKey:@"flyers"];
-        NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"][0];
-        NSMutableArray *hrefArray = [versionsDictionary valueForKey:@"href"];
-        e.flyers=hrefArray;
-        //NSLog(@"Flyers: %@", e.flyers);
-        
-        
+        e.name = [Factory createEventName: event];
+        e.startsAt = [Factory createEventStartsAt: event];
+        e.fees = [Factory createEventFees: event];
+        e.artists = [Factory createEventArtists: event fromCollection:parsedArtists];
+        e.genres = [Factory createEventGenres: event fromCollection:parsedGenres];
+        e.venue = [Factory createEventVenue: event fromCollection: parsedVenues];
+        e.flyers = [Factory createEventFlyers: event];
         [parsedEvents addObject:e];
     }
     return parsedEvents;
 }
 
++ (NSString *) createEventName: (NSDictionary *) ev {
+    return ev[@"name"];
+}
+
++ (NSDate *) createEventStartsAt: (NSDictionary *) ev {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
+    return [df dateFromString: ev[@"starts_at"]];
+}
+
++ (Fees *) createEventFees: (NSDictionary *) ev {
+    NSDictionary *feesDict = [ev objectForKey:@"fees"];
+    Fees *f = [[Fees alloc] init];
+    f.kind = [feesDict valueForKey:@"kind"][0];
+    f.currency =  [feesDict valueForKey:@"currency"][0];
+    if ([[feesDict valueForKey:@"cents"][0] isKindOfClass:[NSNumber class]])
+        f.price = [[feesDict valueForKey:@"cents"][0] floatValue]/100;
+    return f;
+}
+
++ (NSMutableArray *) createEventArtists: (NSDictionary *) ev fromCollection: (NSMutableArray *) parsedArtists {
+    return [Artist artistArrayFromArtistIDArray:ev[@"artists"]withArtistCollection:parsedArtists];
+}
+
++ (NSMutableArray *) createEventGenres: (NSDictionary *) ev fromCollection: (NSMutableArray *) parsedGenres {
+    return [Genre genreArrayFromGenreIDArray:ev[@"music_genres"] withGenreCollection:parsedGenres];;
+}
+
++ (Venue *) createEventVenue: (NSDictionary *) ev fromCollection: (NSMutableArray *) parsedVenues {
+    return [Venue venueFromVenueID:ev[@"venue"] withVenueCollection:parsedVenues];
+}
+
++ (NSMutableArray *) createEventFlyers: (NSDictionary *) ev {
+    NSDictionary *flyersDictionary = [ev valueForKey:@"flyers"];
+    NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"][0];
+    return [versionsDictionary valueForKey:@"href"];
+}
 
 
 @end

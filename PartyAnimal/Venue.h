@@ -10,6 +10,7 @@
 #import "Address.h"
 
 @interface Venue : NSObject
+
 @property (strong, nonatomic) Address * address;
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * identifier;

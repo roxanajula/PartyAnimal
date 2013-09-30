@@ -20,6 +20,4 @@
 @property (strong, nonatomic) NSDate * startsAt;
 @property (strong, nonatomic) Venue * venue;
 
-
-
 @end

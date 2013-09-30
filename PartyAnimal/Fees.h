@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Fees : NSObject
+
 @property (strong, nonatomic) NSString * kind;
 @property (strong, nonatomic) NSString * currency;
 @property (nonatomic) CGFloat price;
+
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Address : NSObject
+
 @property (strong, nonatomic) NSString * city;
 @property (strong, nonatomic) NSString * country;
 @property (strong, nonatomic) NSString * street;
