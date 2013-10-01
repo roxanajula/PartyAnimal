@@ -27,6 +27,8 @@
         [self.tableView reloadData];
     }];
 
+
+
 }
 
 
@@ -47,11 +49,33 @@
     UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
     Event *event =[self.masterEvents objectAtIndex:indexPath.row];
     cell.textLabel.text = event.name;
-    cell.detailTextLabel.text = event.startsAt.description;
+    
+    NSURL *url = [[NSURL alloc] initWithString:event.flyers[0]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    cell.imageView.image=image;
+    
+    NSString *dateString = event.startsAt.description;
+    NSArray *dateParts = [dateString componentsSeparatedByString: @" "];
+    NSString *date = [dateParts objectAtIndex: 0];
+    NSString *time = [dateParts objectAtIndex: 1];
+    NSArray *timeParts = [time componentsSeparatedByString: @":"];
+    NSString *hour = [timeParts objectAtIndex:0];
+    NSString *minutes = [timeParts objectAtIndex:1];
+    NSString *eventStartsAt = [NSString stringWithFormat:@"%@:%@     %@", hour,minutes, date];
+    cell.detailTextLabel.text = eventStartsAt;
+    
     return cell;
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DetailViewController *detailController =segue.destinationViewController;
+    Event *event = [self.masterEvents objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    detailController.detailItem = event;
+}
 @end
+
+
 
 

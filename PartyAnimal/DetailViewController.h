@@ -11,7 +11,8 @@
 
 @interface DetailViewController : UIViewController < UINavigationControllerDelegate>
 @property (strong, nonatomic) Event *detailItem;
-@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *flyerImage;
+@property (strong, nonatomic) IBOutlet UILabel *eventNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *venueNameLabel;
 
 @end

@@ -29,7 +29,14 @@
 {
     //Set up initial UI state
     if (self.detailItem) {
-        self.titleLabel.text = self.detailItem.name;
+        self.eventNameLabel.text= _detailItem.name;
+        NSString *atVenue = [NSString stringWithFormat:@"at %@", _detailItem.venue.name];
+        self.venueNameLabel.text= atVenue;
+        NSURL *url = [[NSURL alloc] initWithString:_detailItem.flyers[1]];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        self.flyerImage.image = image;
+        
     }
 }
 

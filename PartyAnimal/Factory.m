@@ -120,7 +120,9 @@
 + (NSMutableArray *) createEventFlyers: (NSDictionary *) ev {
     NSDictionary *flyersDictionary = [ev valueForKey:@"flyers"];
     NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"][0];
-    return [versionsDictionary valueForKey:@"href"];
+    NSMutableArray *flyersHref = [versionsDictionary valueForKey:@"href"];
+        return flyersHref;
+    
 }
 
 
