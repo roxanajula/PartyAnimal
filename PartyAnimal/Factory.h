@@ -13,5 +13,6 @@
 +(NSMutableArray *) createArtistCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createGenreCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createVenueCollection:(NSDictionary *) responseData;
++(NSMutableArray *) createEventCollection:(NSDictionary *) responseData;
 
 @end

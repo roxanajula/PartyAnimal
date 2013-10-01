@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^response)(NSArray* response);
+
 @interface DataRetriever : NSObject
 
-+ (void) retrieveData;
++ (void) retrieveData:(response)block;
 
 @end

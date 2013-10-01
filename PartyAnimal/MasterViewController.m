@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "DataRetriever.h"
 #import "Event.h"
+#import "Factory.h"
 
 @interface MasterViewController(){
     NSMutableArray *_objects;
@@ -18,25 +19,15 @@
 
 @implementation MasterViewController
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[DataRetriever retrieveData];
+    [DataRetriever retrieveData:^(NSArray *events) {
+        self.masterEvents= events;
+        [self.tableView reloadData];
+    }];
+
 }
-
--(void) viewWillAppear: (BOOL) animated { [self.tableView reloadData];}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 #pragma mark - Table View
@@ -48,21 +39,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dummyEvents.count;
+    return _masterEvents.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
-    Event *event =[self.dummyEvents objectAtIndex:indexPath.row];
+    Event *event =[self.masterEvents objectAtIndex:indexPath.row];
     cell.textLabel.text = event.name;
+    cell.detailTextLabel.text = event.startsAt.description;
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return NO;
 }
 
 

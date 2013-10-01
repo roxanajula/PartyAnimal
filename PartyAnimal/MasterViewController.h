@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface MasterViewController : UITableViewController
-@property (strong) NSMutableArray *dummyEvents;
-
+@property (strong) NSArray *masterEvents;
+@property (strong, nonatomic) UIWindow *window;
 @end

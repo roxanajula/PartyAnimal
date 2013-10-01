@@ -9,25 +9,18 @@
 #import "AppDelegate.h"
 #import "Event.h"
 #import "MasterViewController.h"
+#import "DataRetriever.h"
+#import "Factory.h"
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    Event *event1 = [[Event alloc] init];
-    event1.name=@"Hip Hop Party";
-    Event *event2 = [[Event alloc] init];
-    event2.name=@"Trap Party";
-    Event *event3 = [[Event alloc] init];
-    event3.name=@"Halloween Party";
-    NSMutableArray *dummyEvents = [NSMutableArray arrayWithObjects:event1,event2,event3 ,nil];
-    UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
-    MasterViewController * masterController = [navController.viewControllers objectAtIndex:0];
-    masterController.dummyEvents= dummyEvents;
-        return YES;
-}
-							
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+//{
+//  
+//        return YES;
+//}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
