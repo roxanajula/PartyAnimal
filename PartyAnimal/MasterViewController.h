@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CurrentLocationRetriever.h"
 
 @interface MasterViewController : UITableViewController
+
 @property (strong) NSArray *masterEvents;
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) CLLocation *currentLocation;
+
 @end
