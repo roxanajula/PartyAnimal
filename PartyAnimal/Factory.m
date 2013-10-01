@@ -13,6 +13,7 @@
 #import "Fees.h"
 #import "Event.h"
 #import "DataRetriever.h"
+#import "CurrentLocationRetriever.h"
 
 
 @implementation Factory
@@ -121,6 +122,10 @@
     NSDictionary *flyersDictionary = [ev valueForKey:@"flyers"];
     NSDictionary *versionsDictionary = [flyersDictionary valueForKey:@"versions"][0];
     return [versionsDictionary valueForKey:@"href"];
+}
+
++ (CLLocation *) createReferenceLocation {
+    return [CurrentLocationRetriever getCurrentLocation];
 }
 
 

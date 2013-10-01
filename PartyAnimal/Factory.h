@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CurrentLocationRetriever.h"
 
 @interface Factory : NSObject
 
@@ -14,5 +15,6 @@
 +(NSMutableArray *) createGenreCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createVenueCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createEventCollection:(NSDictionary *) responseData;
++ (CLLocation *) createReferenceLocation;
 
 @end

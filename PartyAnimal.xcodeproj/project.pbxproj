@@ -15,6 +15,8 @@
 		B5C7283E17F1CB0200DC9649 /* backgroundG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */; };
 		B5C7283F17F1CB0200DC9649 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283B17F1CB0200DC9649 /* button.png */; };
 		B5C7284017F1CB0200DC9649 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283C17F1CB0200DC9649 /* button@2x.png */; };
+		C85B690917FABCD70041730F /* CurrentLocationRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = C85B690817FABCD70041730F /* CurrentLocationRetriever.m */; };
+		C85B690B17FAC12A0041730F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B690A17FAC12A0041730F /* CoreLocation.framework */; };
 		C85F4B7F17F06DAE0064F557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B7E17F06DAE0064F557 /* Foundation.framework */; };
 		C85F4B8117F06DAE0064F557 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B8017F06DAE0064F557 /* CoreGraphics.framework */; };
 		C85F4B8317F06DAE0064F557 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B8217F06DAE0064F557 /* UIKit.framework */; };
@@ -61,6 +63,9 @@
 		B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundG@2x.png"; sourceTree = "<group>"; };
 		B5C7283B17F1CB0200DC9649 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		B5C7283C17F1CB0200DC9649 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		C85B690717FABCD70041730F /* CurrentLocationRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocationRetriever.h; sourceTree = "<group>"; };
+		C85B690817FABCD70041730F /* CurrentLocationRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationRetriever.m; sourceTree = "<group>"; };
+		C85B690A17FAC12A0041730F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C85F4B7B17F06DAE0064F557 /* PartyAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85F4B7E17F06DAE0064F557 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C85F4B8017F06DAE0064F557 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85B690B17FAC12A0041730F /* CoreLocation.framework in Frameworks */,
 				C85F4B8117F06DAE0064F557 /* CoreGraphics.framework in Frameworks */,
 				C85F4B8317F06DAE0064F557 /* UIKit.framework in Frameworks */,
 				C85F4B7F17F06DAE0064F557 /* Foundation.framework in Frameworks */,
@@ -126,6 +132,8 @@
 				C85F4BC517F08D800064F557 /* DataRetriever.m */,
 				C8D18DBB17F1E076002FF648 /* Factory.h */,
 				C8D18DBC17F1E076002FF648 /* Factory.m */,
+				C85B690717FABCD70041730F /* CurrentLocationRetriever.h */,
+				C85B690817FABCD70041730F /* CurrentLocationRetriever.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 		C85F4B7D17F06DAE0064F557 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C85B690A17FAC12A0041730F /* CoreLocation.framework */,
 				C85F4B7E17F06DAE0064F557 /* Foundation.framework */,
 				C85F4B8017F06DAE0064F557 /* CoreGraphics.framework */,
 				C85F4B8217F06DAE0064F557 /* UIKit.framework */,
@@ -352,6 +361,7 @@
 				C85F4B9817F06DAE0064F557 /* ViewController.m in Sources */,
 				C85F4BC617F08D800064F557 /* DataRetriever.m in Sources */,
 				C85F4BC017F08CB90064F557 /* Venue.m in Sources */,
+				C85B690917FABCD70041730F /* CurrentLocationRetriever.m in Sources */,
 				B503DFE417F3145A00CF5942 /* DetailViewController.m in Sources */,
 				C8D18DBD17F1E076002FF648 /* Factory.m in Sources */,
 				C85F4B8F17F06DAE0064F557 /* AppDelegate.m in Sources */,
