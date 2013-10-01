@@ -48,15 +48,20 @@
         v.identifier = venue[@"id"];
         v.phoneNo = venue[@"phone_number"];
         v.website = venue[@"website_url"];
-        NSDictionary *addressDict = [venue objectForKey:@"address"];
-        v.address = [[Address alloc]init];
-        v.address.city =[addressDict valueForKey:@"city"];
-        v.address.country = [addressDict valueForKey:@"country"];
-        v.address.street = [addressDict valueForKey:@"street"];
-        v.address.zipCode = [addressDict valueForKey:@"zip_code"];
+        v.address = [Factory createVenueAddressForVenue: venue];
         [parsedVenues addObject:v];
     }
     return parsedVenues;
+}
+
++ (Address *) createVenueAddressForVenue: (NSDictionary *) ve {
+    NSDictionary *addressDict = [ve objectForKey:@"address"];
+    Address *addr = [[Address alloc] init];
+    addr.city =[addressDict valueForKey:@"city"];
+    addr.country = [addressDict valueForKey:@"country"];
+    addr.street = [addressDict valueForKey:@"street"];
+    addr.zipCode = [addressDict valueForKey:@"zip_code"];
+    return addr;
 }
 
 +(NSMutableArray *) createEventCollection:(NSDictionary *) responseData {
