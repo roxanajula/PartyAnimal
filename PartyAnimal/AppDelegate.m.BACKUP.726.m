@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Event.h"
-#import "MasterViewController.h"
+
 
 
 @implementation AppDelegate
@@ -21,6 +20,12 @@
     }
 }
 
+<<<<<<< HEAD
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//
+//    return YES;
+//}
+=======
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.locationManager=[[CLLocationManager alloc] init];
@@ -29,7 +34,7 @@
     }
     return YES;
 }
-
+>>>>>>> upstream/master
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

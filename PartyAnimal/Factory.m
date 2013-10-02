@@ -13,6 +13,7 @@
 #import "Fees.h"
 #import "Event.h"
 #import "DataRetriever.h"
+#import "CurrentLocationRetriever.h"
 
 
 @implementation Factory
@@ -123,6 +124,10 @@
     NSMutableArray *flyersHref = [versionsDictionary valueForKey:@"href"];
         return flyersHref;
     
+}
+
++ (CLLocation *) createReferenceLocation {
+    return [CurrentLocationRetriever getCurrentLocation];
 }
 
 

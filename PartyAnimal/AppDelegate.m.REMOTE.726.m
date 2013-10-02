@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Event.h"
-#import "MasterViewController.h"
+
 
 
 @implementation AppDelegate
@@ -29,7 +28,6 @@
     }
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

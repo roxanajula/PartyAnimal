@@ -9,27 +9,16 @@
 #import "AppDelegate.h"
 #import "Event.h"
 #import "MasterViewController.h"
-
+#import "DataRetriever.h"
+#import "Factory.h"
 
 @implementation AppDelegate
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    CLLocation *newLocation = locations.lastObject;
-    NSTimeInterval howRecent = [newLocation.timestamp timeIntervalSinceNow];
-    if (abs(howRecent)<15.0) {
-        [manager stopUpdatingLocation];
-    }
-}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.locationManager=[[CLLocationManager alloc] init];
-    if([CLLocationManager locationServicesEnabled]){
-        [self.locationManager startUpdatingLocation];
-    }
-    return YES;
-}
-
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

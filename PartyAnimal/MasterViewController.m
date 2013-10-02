@@ -27,7 +27,9 @@
         [self.tableView reloadData];
     }];
 
-
+    self.currentLocation = [Factory createReferenceLocation];
+    //NSLog (@"Latitude: %f", self.currentLocation.coordinate.latitude);
+    //NSLog (@"Longitude: %f", self.currentLocation.coordinate.longitude);
 
 }
 
