@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="1096" y="22"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Detail View Controller-->
         <scene sceneID="twW-OT-IX3">
             <objects>
                 <viewController id="I15-CL-Cqo" customClass="DetailViewController" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="1Mk-z3-uvn"/>
+                    <navigationItem key="navigationItem" id="1Mk-z3-uvn"/>
                     <connections>
                         <outlet property="eventNameLabel" destination="O7f-Mh-pQN" id="ewZ-9v-H84"/>
                         <outlet property="flyerImage" destination="1nG-5T-vxH" id="LMP-xx-Hi3"/>
