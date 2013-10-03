@@ -76,11 +76,13 @@
         Event *e = [[Event alloc] init];
         e.name = [Factory createEventName: event];
         e.startsAt = [Factory createEventStartsAt: event];
+        e.startsAtString =[ Factory createEventStartsAtString:e.startsAt];
         e.fees = [Factory createEventFees: event];
         e.artists = [Factory createEventArtists: event fromCollection:parsedArtists];
         e.genres = [Factory createEventGenres: event fromCollection:parsedGenres];
         e.venue = [Factory createEventVenue: event fromCollection: parsedVenues];
         e.flyers = [Factory createEventFlyers: event];
+       
         [parsedEvents addObject:e];
     }
     return parsedEvents;
@@ -94,7 +96,23 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
     return [df dateFromString: ev[@"starts_at"]];
+    
 }
+
+
++ (NSString *) createEventStartsAtString: (NSDate *) startsAt {
+    NSString *dateString = startsAt.description;
+    NSArray *dateParts = [dateString componentsSeparatedByString: @" "];
+    NSString *date = [dateParts objectAtIndex: 0];
+    NSString *time = [dateParts objectAtIndex: 1];
+    NSArray *timeParts = [time componentsSeparatedByString: @":"];
+    NSString *hour = [timeParts objectAtIndex:0];
+    NSString *minutes = [timeParts objectAtIndex:1];
+    NSString *startsAtString = [NSString stringWithFormat:@"%@:%@     %@", hour,minutes, date];
+    return startsAtString;
+    
+}
+
 
 + (Fees *) createEventFees: (NSDictionary *) ev {
     NSDictionary *feesDict = [ev objectForKey:@"fees"];

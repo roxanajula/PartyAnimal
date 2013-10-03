@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray * genres;
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSDate * startsAt;
+@property (strong, nonatomic) NSString *startsAtString;
 @property (strong, nonatomic) Venue * venue;
 
 @end

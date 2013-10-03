@@ -56,16 +56,8 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [[UIImage alloc] initWithData:data];
     cell.imageView.image=image;
-    
-    NSString *dateString = event.startsAt.description;
-    NSArray *dateParts = [dateString componentsSeparatedByString: @" "];
-    NSString *date = [dateParts objectAtIndex: 0];
-    NSString *time = [dateParts objectAtIndex: 1];
-    NSArray *timeParts = [time componentsSeparatedByString: @":"];
-    NSString *hour = [timeParts objectAtIndex:0];
-    NSString *minutes = [timeParts objectAtIndex:1];
-    NSString *eventStartsAt = [NSString stringWithFormat:@"%@:%@     %@", hour,minutes, date];
-    cell.detailTextLabel.text = eventStartsAt;
+    //Starts at
+    cell.detailTextLabel.text = event.startsAtString;
     
     return cell;
 }

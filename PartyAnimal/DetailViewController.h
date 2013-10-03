@@ -14,5 +14,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *flyerImage;
 @property (strong, nonatomic) IBOutlet UILabel *eventNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *venueNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lineupText;
+@property (strong, nonatomic) IBOutlet UILabel *genresText;
+@property (strong, nonatomic) IBOutlet UILabel *priceText;
+@property (strong, nonatomic) IBOutlet UILabel *whenText;
+@property (strong, nonatomic) IBOutlet UILabel *whereText;
+
 
 @end

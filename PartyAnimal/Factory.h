@@ -15,6 +15,7 @@
 +(NSMutableArray *) createGenreCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createVenueCollection:(NSDictionary *) responseData;
 +(NSMutableArray *) createEventCollection:(NSDictionary *) responseData;
+
 + (CLLocation *) createReferenceLocation;
 
 @end

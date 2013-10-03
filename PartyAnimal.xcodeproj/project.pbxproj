@@ -15,6 +15,7 @@
 		B5C7283E17F1CB0200DC9649 /* backgroundG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */; };
 		B5C7283F17F1CB0200DC9649 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283B17F1CB0200DC9649 /* button.png */; };
 		B5C7284017F1CB0200DC9649 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5C7283C17F1CB0200DC9649 /* button@2x.png */; };
+		B5FE19E517FC600000880991 /* price.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FE19E417FC600000880991 /* price.png */; };
 		C85B690917FABCD70041730F /* CurrentLocationRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = C85B690817FABCD70041730F /* CurrentLocationRetriever.m */; };
 		C85B690B17FAC12A0041730F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B690A17FAC12A0041730F /* CoreLocation.framework */; };
 		C85F4B7F17F06DAE0064F557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85F4B7E17F06DAE0064F557 /* Foundation.framework */; };
@@ -63,6 +64,7 @@
 		B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundG@2x.png"; sourceTree = "<group>"; };
 		B5C7283B17F1CB0200DC9649 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		B5C7283C17F1CB0200DC9649 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		B5FE19E417FC600000880991 /* price.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = price.png; sourceTree = "<group>"; };
 		C85B690717FABCD70041730F /* CurrentLocationRetriever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocationRetriever.h; sourceTree = "<group>"; };
 		C85B690817FABCD70041730F /* CurrentLocationRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationRetriever.m; sourceTree = "<group>"; };
 		C85B690A17FAC12A0041730F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -188,6 +190,7 @@
 		C85F4B8517F06DAE0064F557 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE19E417FC600000880991 /* price.png */,
 				B5C7283917F1CB0200DC9649 /* backgroundG.png */,
 				B5C7283A17F1CB0200DC9649 /* backgroundG@2x.png */,
 				B5C7283B17F1CB0200DC9649 /* button.png */,
@@ -331,6 +334,7 @@
 				B5C7283D17F1CB0200DC9649 /* backgroundG.png in Resources */,
 				B5C7283E17F1CB0200DC9649 /* backgroundG@2x.png in Resources */,
 				C85F4B9A17F06DAE0064F557 /* Images.xcassets in Resources */,
+				B5FE19E517FC600000880991 /* price.png in Resources */,
 				C85F4B9217F06DAE0064F557 /* Main_iPhone.storyboard in Resources */,
 				B5C7284017F1CB0200DC9649 /* button@2x.png in Resources */,
 				C85F4B8917F06DAE0064F557 /* InfoPlist.strings in Resources */,
